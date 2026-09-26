@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DS5 | PS5 DNS</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070b12;color:#f4f7fb;font-family:Tahoma,Arial}
+header{padding:18px 7%;display:flex;justify-content:space-between;
+align-items:center;border-bottom:1px solid #1b2939;background:#0a1019}
+.logo{font-size:30px;font-weight:900;color:#65ff9a}
+.badge{padding:7px 12px;border-radius:20px;background:#10251a;
+color:#65ff9a;font-size:13px}
+main{max-width:900px;margin:auto;padding:30px 20px}
+.hero{text-align:center;padding:35px 0}
+h1{font-size:60px;margin:10px}
+.muted{color:#94a1b3}
+.panel{background:#0d1520;border:1px solid #1c2b3c;
+border-radius:18px;padding:22px;margin:18px 0}
+input{width:100%;padding:14px;margin:8px 0;background:#070c13;
+color:white;border:1px solid #29394d;border-radius:10px;font-size:16px}
+button{border:0;border-radius:10px;padding:12px 17px;
+background:#65ff9a;color:#06100a;font-weight:bold}
+button.secondary{background:#1a2635;color:white}
+.hidden{display:none}
+.dns{display:grid;grid-template-columns:1fr auto;gap:10px;
+align-items:center;background:#070c13;padding:12px;border-radius:12px;
+margin:10px 0;font-family:monospace;direction:ltr}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>*{flex:1}
+.notice{padding:12px;border-radius:10px;background:#161d27;color:#aeb9c8}
+footer{text-align:center;color:#657286;padding:30px}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">DS5</div>
+<div class="badge">PS5 DNS HUB</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="badge">🎮 مخصوص PS5</div>
+<h1>DS5</h1>
+<p class="muted">مرکز DNS برای گیمرها</p>
+</section>
+
+<section id="login" class="panel">
+<h2>ورود کاربران</h2>
+<p class="muted">شماره تلفن را وارد کن.</p>
+
+<input id="phone" type="tel" placeholder="شماره تلفن">
+
+<button onclick="login()">ورود</button>
+
+<p class="notice">
+نسخه آزمایشی است؛ تأیید واقعی شماره تلفن نیاز به سرویس SMS و سرور دارد.
+</p>
+
+<p id="loginMsg"></p>
+</section>
+
+<section id="user" class="panel hidden">
+
+<h2>🎮 DNSهای DS5</h2>
+
+<p id="welcome"></p>
+
+<div id="dnsList"></div>
+
+<button class="secondary" onclick="logout()">خروج</button>
+
+</section>
+
+<section id="admin" class="panel">
+
+<h2>⚙️ مدیریت DNS</h2>
+
+<p class="muted">
+افزودن DNS جدید
+</p>
+
+<input id="name" placeholder="نام DNS">
+
+<input id="primary" placeholder="Primary DNS">
+
+<input id="secondary" placeholder="Secondary DNS">
+
+<button onclick="addDNS()">➕ افزودن DNS</
